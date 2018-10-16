@@ -197,13 +197,18 @@ $(function () {
         var hash = this.hash;
         event.preventDefault();
 
+        if ( sec === '#blog' ) {
+            window.location.href ='blog';
+            return;
+        }
+
         $('#menu a[href="'+sec+'"]').addClass('active_item').parent().siblings().find('a').removeClass('active_item');
         if (check_screen() === "mobile_screen") {
             
             if ( !$(this).hasClass("goToSec") ) { mob_menu_toggle(); }
             next_num(6);
 
-            if ( sec === '#home' ) {
+           if ( sec === '#home' ) {
 
                 $(home__type).fadeIn();
                 $("section").removeClass('active_sec');
